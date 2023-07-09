@@ -32,6 +32,6 @@ public class BaseTestClass_Holder_New {
     }
 
     public void goToPart(String part) {
-        goToUrl(FirstPropertiesReader.getInstance().getProperties("appb.base.url") + part);
+    goToUrl(FirstPropertiesReader.getInstance().getProperties("app.base.url") + part);
     }
 }
