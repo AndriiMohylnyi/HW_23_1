@@ -8,14 +8,19 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import utils.FirstPropertiesReader;
+import utils.MyFilesUtils;
+
+import java.io.IOException;
 
 public class BaseTestClass_Holder_New {
     protected WebDriver driver;
 
     @BeforeSuite
-    public void beforeClass() {
+    public void beforeClass() throws IOException {
 //        WebDriverHolder.getInstance().getDriver();
         driver = WebDriverHolder.getInstance().getDriver();
+        MyFilesUtils.clearFilesFolder();
+        MyFilesUtils.clearDownloadsFolder();
     }
 
     @AfterSuite
