@@ -3,15 +3,14 @@ package practice.test;
 
 import driver.WebDriverHolder;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
+import practice.test.lessons21.MyTestListener;
 import utils.FirstPropertiesReader;
 import utils.MyFilesUtils;
 
 import java.io.IOException;
 
+@Listeners(MyTestListener.class)
 public class BaseTestClass_Holder_New {
     protected WebDriver driver;
 

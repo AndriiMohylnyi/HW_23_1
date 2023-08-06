@@ -1,4 +1,4 @@
-package practice.test;
+package practice.test.lessons21;
 
 
 import driver.WebDriverHolder;
@@ -6,25 +6,22 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
-import practice.test.lessons21.MyTestListener;
 import utils.FirstPropertiesReader;
-import utils.MyFilesUtils;
 
 import java.io.IOException;
-@Listeners(MyTestListener.class)
 
-public class BaseTestClass_Holder_New_Files {
-    protected WebDriver driver;
+@Listeners(MyTestListener.class)
+public class BaseTestClass {
 
     @BeforeSuite
-    public void beforeClass() throws IOException {
-        driver = WebDriverHolder.getInstance().getDriver();
+    public void beforeSuite() {
+        WebDriverHolder.getInstance().getDriver();
 //        MyFilesUtils.clearFilesFolder();
-//        MyFilesUtils.clearDownloadsFolder();
+//        MyFilesUtils.clearScreenshotsFolder();
     }
 
     @AfterSuite
-    public void afterClass() {
+    public void afterSuite() {
         WebDriverHolder.getInstance().driverQuit();
     }
 

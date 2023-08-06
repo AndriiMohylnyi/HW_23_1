@@ -1,5 +1,6 @@
 package practice.test;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -23,6 +24,8 @@ public class UploadDownloadTest extends BaseTestClass_Holder_New{
         UploadDownloadPage uploadDownloadPage = new UploadDownloadPage()
                 .findUpload(file);
         Assert.assertEquals(uploadDownloadPage.getNameFile(),file.getName());
+        goToPart("download");
+        Assert.assertTrue(driver.findElement(By.linkText(file.getName())).isDisplayed());
 
     }
 }
