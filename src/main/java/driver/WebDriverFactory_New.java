@@ -1,6 +1,6 @@
 package driver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,15 +14,15 @@ public class WebDriverFactory_New {
         WebDriver driver = null;
         switch (webDriverType) {
             case CHROME:
-                WebDriverManager.chromedriver().setup();
+                //WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 break;
             case EDGE:
-                WebDriverManager.edgedriver().setup();
+               // WebDriverManager.edgedriver().setup();
                 driver = new EdgeDriver();
                 break;
             case FIREFOX:
-                WebDriverManager.firefoxdriver().setup();
+               // WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 break;
         }
